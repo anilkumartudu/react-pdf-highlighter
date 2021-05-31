@@ -49,7 +49,8 @@ const initialUrl = searchParams.get("url") || PRIMARY_PDF_URL;
 const TestApp = () => {
   const [url, setUrl] = useState(initialUrl);
   const [highlights, setHighlights] = useState(
-    testHighlights[initialUrl] ? [...testHighlights[initialUrl]] : []
+    []
+    // testHighlights[initialUrl] ? [...testHighlights[initialUrl]] : []
   );
 
   const resetHighlights = () => {
@@ -124,16 +125,16 @@ const TestApp = () => {
 
   // const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
-  // return (
-  //   <PdfLoader url={"https://arxiv.org/pdf/1708.08021.pdf"}>
-  //     {pdfDocument => {
-  //       console.log({ pdfDocument });
-  //       return (
-  //         <PdfHighlighter pdfDocument={pdfDocument} highlights={highlights} />
-  //       );
-  //     }}
-  //   </PdfLoader>
-  // );
+  return (
+    <PdfLoader url={"https://arxiv.org/pdf/1708.08021.pdf"}>
+      {pdfDocument => {
+        console.log({ pdfDocument });
+        return (
+          <PdfHighlighter pdfDocument={pdfDocument} highlights={highlights} />
+        );
+      }}
+    </PdfLoader>
+  );
 
   return (
     <div className="App" style={{ display: "flex", height: "100vh" }}>
