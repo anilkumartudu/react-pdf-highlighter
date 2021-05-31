@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-dropzone": "^11.3.2",
     "react-pdf-highlighter": "^3.4.0"
   },
   "devDependencies": {
